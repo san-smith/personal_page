@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:personal_page/internal/app_config.dart';
+
+import 'widgets/main_page.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,37 +9,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      backgroundColor: Theme.of(context).backgroundColor,
+      body: _getBody(),
+    );
+  }
+
+  Widget _getBody() {
+    return PageView(
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+        MainPage(),
+      ],
     );
   }
 }
