@@ -19,5 +19,6 @@ class AppConfig {
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
+    cardColor: SECONDARY_COLOR,
   );
 }

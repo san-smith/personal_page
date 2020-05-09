@@ -59,28 +59,36 @@ class _MainPageState extends State<MainPage> {
           Wrap(
             alignment: WrapAlignment.center,
             children: <Widget>[
-              SocialButton(
-                child: FaIcon(FontAwesomeIcons.at),
-                toolTip: 'san-smith@mail.ru',
-                onTap: _onEmailTap,
-              ),
-              SocialButton(
-                child: FaIcon(FontAwesomeIcons.telegramPlane),
-                toolTip: '@san_smith',
-                onTap: _onTelegramTap,
-              ),
-              SocialButton(
-                child: FaIcon(FontAwesomeIcons.github),
-                toolTip: 'san-smith',
-                onTap: _onGitHubTap,
-              ),
-              SocialButton(
-                child: Image.asset(
-                  'assets/images/habr_icon.png',
-                  height: 35,
+              Tooltip(
+                message: 'san-smith@mail.ru',
+                child: SocialButton(
+                  child: FaIcon(FontAwesomeIcons.at),
+                  onTap: _onEmailTap,
                 ),
-                toolTip: '@san-smith',
-                onTap: _onHabrTap,
+              ),
+              Tooltip(
+                message: '@san_smith',
+                child: SocialButton(
+                  child: FaIcon(FontAwesomeIcons.telegramPlane),
+                  onTap: _onTelegramTap,
+                ),
+              ),
+              Tooltip(
+                message: 'san-smith',
+                child: SocialButton(
+                  child: FaIcon(FontAwesomeIcons.github),
+                  onTap: _onGitHubTap,
+                ),
+              ),
+              Tooltip(
+                message: '@san-smith',
+                child: SocialButton(
+                  child: Image.asset(
+                    'assets/images/habr_icon.png',
+                    height: 35,
+                  ),
+                  onTap: _onHabrTap,
+                ),
               ),
             ],
           ),
