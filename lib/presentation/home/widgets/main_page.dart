@@ -14,7 +14,16 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppConfig.DARK_COLOR,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppConfig.DARK_COLOR,
+            AppConfig.PRIMARY_COLOR,
+          ],
+        ),
+      ),
       child: Center(
         child: Wrap(
           children: <Widget>[

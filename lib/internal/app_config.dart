@@ -8,11 +8,16 @@ class AppConfig {
   static const LIGHT_COLOR = const Color(0xFFf1faee);
 
   static ThemeData darkTheme = ThemeData(
-    backgroundColor: LIGHT_COLOR,
+    backgroundColor: PRIMARY_COLOR,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     fontFamily: 'JetBrainsMono',
+    textTheme: TextTheme(
+      bodyText2: TextStyle(
+        color: Colors.white,
+      ),
+    ),
     iconTheme: IconThemeData(
       color: Colors.white,
-    )
+    ),
   );
 }
