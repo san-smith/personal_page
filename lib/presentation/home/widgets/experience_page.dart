@@ -35,11 +35,14 @@ class _ExperiencePageState extends State<ExperiencePage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          'Проекты, в разработке которых принимал участие:',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            'Проекты, в разработке которых принимал участие:',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         SizedBox(height: 20),
@@ -123,34 +126,37 @@ class _ExperiencePageState extends State<ExperiencePage> {
     String playMarketUrl,
     String appStoreUrl,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Flexible(
-          child: Image.asset(imagePath),
-          flex: 5,
-        ),
-        SizedBox(height: 20),
-        Flexible(
-          child: Text(label),
-        ),
-        SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            if (playMarketUrl != null)
-              SocialButton(
-                child: FaIcon(FontAwesomeIcons.googlePlay),
-                onTap: () => _onMarketIconTap(playMarketUrl),
-              ),
-            if (appStoreUrl != null)
-              SocialButton(
-                child: FaIcon(FontAwesomeIcons.apple),
-                onTap: () => _onMarketIconTap(appStoreUrl),
-              ),
-          ],
-        ),
-      ],
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Flexible(
+            child: Image.asset(imagePath),
+            flex: 5,
+          ),
+          SizedBox(height: 20),
+          Flexible(
+            child: Text(label),
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (playMarketUrl != null)
+                SocialButton(
+                  child: FaIcon(FontAwesomeIcons.googlePlay),
+                  onTap: () => _onMarketIconTap(playMarketUrl),
+                ),
+              if (appStoreUrl != null)
+                SocialButton(
+                  child: FaIcon(FontAwesomeIcons.apple),
+                  onTap: () => _onMarketIconTap(appStoreUrl),
+                ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

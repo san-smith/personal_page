@@ -46,11 +46,11 @@ class _HomeState extends State<Home> {
           itemCount: _pages.length,
           itemBuilder: (context, index) => _pages[index],
         ),
-        Positioned(
-          right: 20,
-          top: 20,
-          child: _getForkButton(),
-        ),
+        // Positioned(
+        //   right: 20,
+        //   top: 30,
+        //   child: _getForkButton(),
+        // ),
         Align(
           alignment: Alignment.topCenter,
           child: _goUpButton(),

@@ -14,6 +14,10 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(
+        vertical: 50,
+        horizontal: 10,
+      ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
@@ -106,7 +110,7 @@ class _MainPageState extends State<MainPage> {
           _getInfoRow(
             title: 'Обо мне',
             child: _getInfoText(
-              '''Я занимаюсь разработкой кроссплатформенных мобильных приложений, преподаю в вузе, а ещё занимаюсь наукой и получил степень кандидата физико-математических наук.
+              '''Занимаюсь разработкой кроссплатформенных мобильных приложений, преподаю в вузе, получил степень кандидата физико-математических наук.
 Технологии и языки, которые я использую в работе:''',
             ),
           ),
@@ -184,7 +188,7 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
         ),
-        SizedBox(width: 20),
+        SizedBox(width: 10),
         Flexible(
           child: child,
         ),
